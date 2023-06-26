@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\WorkController;
+use App\Http\Controllers\Api\WorkController;
 use App\Models\Work;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,4 +20,4 @@ Route::namespace('Api')
         ->prefix('works')
         ->group(function(){
             Route::get('/',[WorkController::class, 'index']);
-        })
+        });
