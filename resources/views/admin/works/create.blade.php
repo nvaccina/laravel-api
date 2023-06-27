@@ -50,8 +50,8 @@
             </div>
 
             <div class="mb-3 w-25">
-                <label for="type" class="form-label">Tipo</label>
-                <select class="form-select" aria-label="Default select example" name="type" id="type">
+                <label for="type_id" class="form-label">Tipo</label>
+                <select class="form-select" aria-label="Default select example" name="type_id" id="type_id">
                     <option value="" selected>Seleziona il tipo di lavoro</option>
 
                     @foreach ($types as $type )

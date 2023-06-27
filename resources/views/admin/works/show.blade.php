@@ -10,9 +10,9 @@
         </div>
         <p>{{$work->image_original_name}}</p>
 
-        <div>
+        <div class="pt-2">
             <span>Tipo:</span>
-            <span class="pt-2 badge text-bg-primary">{{$work->type?->name}}</span>
+            <span class="badge text-bg-primary">{{$work->type?->name}}</span>
 
         </div>
 

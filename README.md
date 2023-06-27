@@ -17,3 +17,7 @@ Creiamo un nuovo componente ProjectCard, che corrisponde ad una card per visuali
 Utilizziamo questo componente per visualizzare tutti i progetti ricevuti tramite API.<br>
 
 # Steps
+- Creare il WorkController all'interno di una cartella Api;
+- Creiamo il nuovo componente App.vue che si dovrà innestare in home.blade.php
+- Crere lo store.js e lo importiamo in App.vue
+- Facciamo la chiamata axios all'interno di App.vue per visualizzare i dati;
