@@ -20,4 +20,9 @@ Route::namespace('Api')
         ->prefix('works')
         ->group(function(){
             Route::get('/',[WorkController::class, 'index']);
+            Route::get('/types',[WorkController::class, 'getTypes']);
+            Route::get('/technologies',[WorkController::class, 'getTechnologies']);
+            Route::get('/work-type/{id}',[WorkController::class, 'getWorksByType']);
+            Route::get('/work-technology/{id}',[WorkController::class, 'getWorksByTechnology']);
+
         });
