@@ -24,5 +24,6 @@ Route::namespace('Api')
             Route::get('/technologies',[WorkController::class, 'getTechnologies']);
             Route::get('/work-type/{id}',[WorkController::class, 'getWorksByType']);
             Route::get('/work-technology/{id}',[WorkController::class, 'getWorksByTechnology']);
-
+            Route::get('/{slug}',[WorkController::class, 'getWorkDetail']);
+            Route::get('/search/{tosearch}',[WorkController::class, 'search']);
         });

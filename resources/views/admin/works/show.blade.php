@@ -5,7 +5,7 @@
         <h2 class="text-secondary mb-4"><strong>Work: </strong>{{$work->title}}</h2>
 
         <div class="card-img-top d-block">
-            <img class="nv_image" src="{{ asset('storage/' . $work->image) }}" alt="{{$work->title}}" onerror="this.src='/img/noimage.jpg'">
+            <img class="nv_image" src="{{ asset('storage/' . $work->image) }}" alt="{{$work->image_original_name}}" onerror="this.src='/img/noimage.jpg'">
 
         </div>
         <p>{{$work->image_original_name}}</p>

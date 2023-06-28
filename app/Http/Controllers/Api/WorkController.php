@@ -47,8 +47,26 @@ class WorkController extends Controller
                     $query->where('technology_id', $id);
                 })->paginate(10);
 
-
 		return response()->json($works);
 	}
+
+    public function getWorkDetail($slug){
+
+		$work = Work::where('slug', $slug)->with('type', 'technologies')->first();
+        if($work->image) $work->image = asset('storage/' . $work->image);
+        else{
+            $work->image = asset('/img/noimage.jpg');
+            $work->image_original_name = '- no image -';
+        }
+
+		return response()->json($work);
+	}
+
+    public function search($tosearch){
+        $works = Work::where('title', 'like', "%$tosearch%")->with('type', 'technologies')->paginate(10);
+
+        return response()->json($works);
+    }
+
 
 }
