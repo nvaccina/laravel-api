@@ -21,7 +21,7 @@
             @forelse ($work->technologies as $technology)
                 <span class="badge text-bg-secondary">{{ $technology->name}}</span>
             @empty
-                <span>nessuna tecnologia presente</span>
+                <span>-nessuna tecnologia presente-</span>
             @endforelse
 
         </div>

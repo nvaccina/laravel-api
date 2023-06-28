@@ -61,6 +61,9 @@
                     @endforeach
 
                 </select>
+                @error('type_id')
+                    <p class="text-danger py-1">{{$message}}</p>
+                @enderror
             </div>
 
             <div class="mb-3 w-25">

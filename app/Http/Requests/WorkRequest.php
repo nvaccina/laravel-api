@@ -25,6 +25,7 @@ class WorkRequest extends FormRequest
     {
         return [
             'title' => 'required|min:3|max:255',
+            'type_id' => 'required',
             'text' => 'required|min:20',
         ];
     }
@@ -34,6 +35,7 @@ class WorkRequest extends FormRequest
             'title.required' => 'Il Titolo è un campo obbligatorio',
             'title.min' => 'Il Titolo deve avere almeno :min caratteri',
             'title.max' => 'Il Titolo non può avere più di :max caratteri',
+            'type_id.required' => 'Il Tipo è un campo obbligatorio',
             'text.required' => 'Il Testo è un campo obbligatorio',
             'text.min' => 'Il Testo deve avere almeno :min caratteri',
         ];

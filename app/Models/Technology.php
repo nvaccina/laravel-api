@@ -12,7 +12,8 @@ class Technology extends Model
     public function work(){
         return $this->belongsToMany(Work::class);
     }
+    /*
     public function type(){
         return $this->hasMany(Type::class);
-    }
+    }*/
 }

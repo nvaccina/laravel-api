@@ -50,7 +50,7 @@
             </div>
 
             <div class="mb-3 w-25">
-                <label for="type_id" class="form-label">Tipo</label>
+                <label for="type_id" class="form-label">Tipo(*)</label>
                 <select class="form-select" aria-label="Default select example" name="type_id" id="type_id">
                     <option value="" selected>Seleziona il tipo di lavoro</option>
 
@@ -62,6 +62,9 @@
                     @endforeach
 
                 </select>
+                @error('type_id')
+                    <p class="text-danger py-1">{{$message}}</p>
+                @enderror
             </div>
 
             <div class="mb-3 w-25">

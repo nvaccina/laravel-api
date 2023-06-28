@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Work;
 use App\Models\Type;
 use App\Models\Technology;
+use Illuminate\Database\Eloquent\Builder;
 
 class WorkController extends Controller
 {
@@ -41,10 +42,12 @@ class WorkController extends Controller
 
     public function getWorksByTechnology($id){
 
-		//$works = Work::where('technology_work.technology_id', $id)->with('type', 'technologies')->paginate(10);
-        $works = Technology::find($id)->with('work', 'work.type')->get();
-        //$works = Work::where('technologies.id', $id)->with('type', 'technologies')->paginate(10);
-        //dd($id, $works->groupBy('work.id')->toArray());
+        $works = Work::with('type', 'technologies')
+                ->whereHas('technologies', function(Builder $query) use($id){
+                    $query->where('technology_id', $id);
+                })->paginate(10);
+
+
 		return response()->json($works);
 	}
 
