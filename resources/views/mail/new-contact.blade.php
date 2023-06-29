@@ -1,9 +1,9 @@
 <h1>Nuovo messaggio per Admin</h1>
 <div>
-    <h4>Hai ricevuto un nuovo messaggio:</h4>
-    <p>Nome: {{$lead->name}}</p>
-    <p>Email: {{$lead->mail}}</p>
-    <p>Message:<br>
+    <h3>Hai ricevuto un nuovo messaggio!</h3>
+    <p><strong>Nome: </strong>{{$lead->name}}</p>
+    <p><strong>Email: </strong>{{$lead->email}}</p>
+    <p><strong>Message:</strong><br>
         {{$lead->message}}
     </p>
 </div>
