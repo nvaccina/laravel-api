@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\WorkController;
+use App\Http\Controllers\Api\LeadController;
 use App\Models\Work;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -27,3 +28,5 @@ Route::namespace('Api')
             Route::get('/{slug}',[WorkController::class, 'getWorkDetail']);
             Route::get('/search/{tosearch}',[WorkController::class, 'search']);
         });
+
+Route::post('/contacts', [LeadController::class, 'store']);

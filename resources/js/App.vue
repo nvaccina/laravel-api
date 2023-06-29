@@ -1,39 +1,32 @@
 <script>
-
-import  {store} from './store/store.js';
-import axios from 'axios';
+import Header from './components/Header.vue';
+import Footer from './components/Footer.vue';
 
 export default {
     name: 'home',
-
-    data(){
-        return{
-            works:[],
-        }
-    },
-
-    methods:{
-        getApi(){
-            axios.get(store.apiUrl + 'works')
-            .then(results => {
-                this.works = results.data;
-                console.log('WORKS',this.works);
-            })
-        }
-    },
-
-    mounted(){
-        this.getApi();
+    components:{
+        Header,
+        Footer
     }
 
 }
 </script>
 
 <template>
-    <h1>Elenco Works</h1>
+    <Header/>
+
+    <router-view></router-view>
+
+    <Footer/>
 
 </template>
 
-<style>
+<style lang="scss" scoped>
+@use '../scss/style.scss' as *;
+
+.active{
+    border-bottom: 2px solid blue;
+    color: blue;
+}
 
 </style>

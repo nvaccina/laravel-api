@@ -19,7 +19,7 @@
         <div class="pt-2">
             <span>Tecnologie: </span>
             @forelse ($work->technologies as $technology)
-                <span class="badge text-bg-secondary">{{ $technology->name}}</span>
+                <span class="badge text-bg-warning">{{ $technology->name}}</span>
             @empty
                 <span>-nessuna tecnologia presente-</span>
             @endforelse

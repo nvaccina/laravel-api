@@ -1,0 +1,13 @@
+@import 'bootstrap/scss/bootstrap';
+
+body{
+    margin:0 !important;
+}
+.container{
+    width: 85%;
+    max-width: 1200px;
+    margin: 30px auto;
+    h1{
+        text-align: center;
+    }
+}

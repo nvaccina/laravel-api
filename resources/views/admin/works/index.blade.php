@@ -35,7 +35,7 @@
 
                         @forelse ($work->technologies as $technology)
                             <td class="d-flex border border-0 mpt-2">
-                                <span class="badge text-bg-secondary">{{ $technology->name}}</span>
+                                <span class="badge text-bg-warning">{{ $technology->name}}</span>
                             </td>
                         @empty
                             <td class="border border-0">
