@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\WorkRequest;
-use Illuminate\Http\Request;
 use App\Models\Work;
 use App\Models\Type;
 use App\Models\Technology;
-use Illuminate\Support\Facades\Storage;
+
 
 use function PHPSTORM_META\type;
 
@@ -52,9 +53,9 @@ class WorkController extends Controller
         $form_data['creation_date'] = date('Y-m-d');
 
         if(array_key_exists('image', $form_data)){
-
-            $form_data['image_original_name'] = $request->file('image')->getClientOriginalName();
             $form_data['image'] = Storage::put('uploads/', $form_data['image']);
+            $form_data['image_original_name'] = $request->file('image')->getClientOriginalName();
+            //$form_data['image'] = Storage::put('uploads/', $form_data['image']);
         }
 
         $new_work = new Work;

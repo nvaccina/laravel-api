@@ -6,7 +6,7 @@ export default {
 </script>
 
 <template>
-    <footer class="mt-5">
+    <footer>
         <div class="container-fluid d-flex justify-content-center align-items-center h-100">
         <strong>Made by Niccolò</strong>
 
@@ -19,9 +19,9 @@ export default {
 @use '../../scss/app.scss' as *;
 
 footer{
-    height: 100px;
-    background-color: lightgray;
-    border-top: 2px solid black;
+    height: 80px;
+    background-color: brown;
+    border-top: 3px solid black;
 }
 
 </style>

@@ -21,7 +21,6 @@ class WorksTableSeeder extends Seeder
             $new_work = new Work();
             $new_work->title = $faker->sentence();
             $new_work->slug = Work::generateSlug($new_work->title);
-            $new_work->image = $faker->imageUrl(200, 480, 'animals', true, 'dogs', true);
             $new_work->text = $faker->text(300);
             $new_work->creation_date = date('Y/m/d');
             $new_work->type_id = Type::inRandomOrder()->first()->id;

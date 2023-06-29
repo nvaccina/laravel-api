@@ -1,4 +1,4 @@
-/*import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import Home from './pages/Home.vue';
 import Contacts from './pages/Contacts.vue';
 import Works from './pages/Works.vue';
@@ -43,4 +43,4 @@ const router = createRouter({
 });
 
 export { router };
-*/
+

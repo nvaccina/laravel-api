@@ -12,11 +12,6 @@ class PageController extends Controller
         return view('guest.home');
     }
 
-    public function contacts(){
-
-        return view('guest.contacts');
-    }
-
     public function news(){
 
         return view('guest.news');

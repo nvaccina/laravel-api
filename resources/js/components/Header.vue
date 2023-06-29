@@ -7,18 +7,18 @@ export default {
 <template>
     <div class="container-fluid">
         <header>
-        <ul>
+        <ul class="d-flex justify-content-center align-items-center h-100">
             <li>
             <router-link :to="{name:'home'}">home</router-link>
-            </li>
-            <li>
-            <router-link :to="{name:'contacts'}">contatti</router-link>
             </li>
             <li>
             <router-link :to="{name:'works'}">works</router-link>
             </li>
             <li>
             <router-link :to="{name:'about'}">chi siamo</router-link>
+            </li>
+            <li>
+            <router-link :to="{name:'contacts'}">contatti</router-link>
             </li>
         </ul>
         </header>
@@ -32,30 +32,28 @@ export default {
 @use '../../scss/app.scss' as *;
 
 .container-fluid{
-    background-color: lightgray;
-    border-bottom: 2px solid black;
+    background-color: brown;
+    border-bottom: 3px solid black;
     header{
+        height: 60px;
         ul{
         list-style: none;
-        display: flex;
-        justify-content: center;
         padding: 20px 0;
         margin: 0;
         li{
             margin: 0 10px;
-            border-bottom: 2px solid lightgray;
-            &:hover, &.active{
-                border-bottom: 2px solid rgb(90, 195, 243);
-            }
+
             a{
             text-transform: uppercase;
             text-decoration: none;
             color: black;
             font-size: 18px;
             font-weight: bold;
-            &:hover, &.active{
-                color: rgb(90, 195, 243);
-            }
+            border-bottom: 3px solid brown;
+                &:hover, &.active{
+                    color: white;
+                    border-bottom: 3px solid white;
+                }
             }
         }
         }
