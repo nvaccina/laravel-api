@@ -18,7 +18,7 @@
         <form action="{{route('admin.types.store')}}" method="POST" >
             <div class="input-group mb-3 nv_search_type">
                 @csrf
-                <input type="text" class="form-control" name="name" placeholder="Nuova categoria" aria-label="Nuova categoria" aria-describedby="button-addon2">
+                <input type="text" class="form-control" name="name" placeholder="Nuovo Tipo" aria-label="Nuovo Tipo" aria-describedby="button-addon2">
                 <button class="btn btn-outline-secondary add_border" type="submit" id="button-addon2"><i class="fa-solid fa-plus"></i> Add</button>
             </div>
         </form>
@@ -45,7 +45,7 @@
                             >
                                 @csrf
                                 @method('PUT')
-                                <input class="border-0" name="name" type="text" value="{{  $type->name  }}">
+                                <input class="nv_edit_bar" name="name" type="text" value="{{  $type->name  }}">
                             </form>
 
                         </td>
@@ -59,7 +59,7 @@
                             @include('admin.partials.form-delete',[
                                 'title' => 'Eliminazione Tipo',
                                 'id' => $type->id,
-                                'message' => "Confermi l'eliminazione della categoria $type->name ?",
+                                'message' => "Confermi l'eliminazione del tipo $type->name ?",
                                 'route' => route('admin.types.destroy', $type)
                             ])
 

@@ -21,7 +21,7 @@
             </a>
         </li>
         <li class="py-2">
-            <a href="#" class="{{Route::currentRouteName() === '#' ? 'active' : ''}}">
+            <a href="{{route('admin.technology.index')}}" class="{{Route::currentRouteName() === 'admin.technologies.index' ? 'active' : ''}}">
                 <i class="pe-2 fa-solid fa-tag"></i> Gestione Technologies
             </a>
         </li>

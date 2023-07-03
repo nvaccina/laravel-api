@@ -11,14 +11,14 @@
     @endif
 
 
-    <h1 class="text-secondary mb-4">Gestione Technology</h1>
+    <h1 class="text-secondary mb-4">Gestione Technologies</h1>
 
     <div class="w-50">
 
-        <form action="{{route('admin.types.store')}}" method="POST" >
+        <form action="{{route('admin.technology.store')}}" method="POST" >
             <div class="input-group mb-3 nv_search_type">
                 @csrf
-                <input type="text" class="form-control" name="name" placeholder="Nuova categoria" aria-label="Nuova categoria" aria-describedby="button-addon2">
+                <input type="text" class="form-control" name="name" placeholder="Nuova Tecnologia" aria-label="Nuova Tecnologia" aria-describedby="button-addon2">
                 <button class="btn btn-outline-secondary add_border" type="submit" id="button-addon2"><i class="fa-solid fa-plus"></i> Add</button>
             </div>
         </form>
@@ -35,17 +35,17 @@
             </thead>
             <tbody>
 
-                @foreach ($types as $type)
+                @foreach ($technologies as $technology)
                     <tr>
                         <td>
                             <form
-                            action="{{route('admin.types.update', $type)}}"
+                            action="{{route('admin.technology.update', $technology)}}"
                             method="POST"
                             id="edit_form"
                             >
                                 @csrf
                                 @method('PUT')
-                                <input class="border-0" name="name" type="text" value="{{  $type->name  }}">
+                                <input class="nv_edit_bar" name="name" type="text" value="{{  $technology->name  }}">
                             </form>
 
                         </td>
@@ -57,14 +57,14 @@
                                 <i class="fa-solid fa-floppy-disk"></i>
                             </button>
                             @include('admin.partials.form-delete',[
-                                'title' => 'Eliminazione Tipo',
-                                'id' => $type->id,
-                                'message' => "Confermi l'eliminazione della categoria $type->name ?",
-                                'route' => route('admin.types.destroy', $type)
+                                'title' => 'Eliminazione Tecnologia',
+                                'id' => $technology->id,
+                                'message' => "Confermi l'eliminazione della tecnologia: $technology->name ?",
+                                'route' => route('admin.technology.destroy', $technology)
                             ])
 
                         </td>
-                        <td class="text-center">{{ count($type->works) }}</td>
+                        <td class="text-center">{{ count($technology->works) }}</td>
                     </tr>
                 @endforeach
 

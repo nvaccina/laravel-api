@@ -33,7 +33,6 @@ Route::middleware(['auth', 'verified'])
         Route::get('/stats',[DashboardController::class, 'stats'])->name('stats');
 
         Route::resource('works', WorkController::class);
-
         Route::resource('types', TypeController::class);
         Route::resource('technology', TechnologyController::class);
         Route::get('type-works', [WorkController::class, 'typeWorks'])->name('type_works');
