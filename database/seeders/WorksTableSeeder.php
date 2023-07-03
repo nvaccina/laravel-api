@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Work;
 use App\Models\Type;
+use App\Models\USer;
 use Faker\Generator as Faker;
 
 class WorksTableSeeder extends Seeder
@@ -19,11 +20,12 @@ class WorksTableSeeder extends Seeder
     {
         for ($i=0; $i < 50; $i++) {
             $new_work = new Work();
+            $new_work->type_id = Type::inRandomOrder()->first()->id;
+            $new_work->user_id = User::inRandomOrder()->first()->id;
             $new_work->title = $faker->sentence();
             $new_work->slug = Work::generateSlug($new_work->title);
             $new_work->text = $faker->text(300);
             $new_work->creation_date = date('Y/m/d');
-            $new_work->type_id = Type::inRandomOrder()->first()->id;
             $new_work->save();
         }
 

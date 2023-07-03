@@ -4,14 +4,13 @@
 
 <div class="container p-5">
 
+    <h1 class="text-secondary mb-4">Gestione Technologies</h1>
+
     @if (session('message'))
         <div class="alert alert-success" role="alert">
             {{ session('message') }}
         </div>
     @endif
-
-
-    <h1 class="text-secondary mb-4">Gestione Technologies</h1>
 
     <div class="w-50">
 
@@ -41,7 +40,7 @@
                             <form
                             action="{{route('admin.technology.update', $technology)}}"
                             method="POST"
-                            id="edit_form"
+                            id="edit_form{{$technology->id}}"
                             >
                                 @csrf
                                 @method('PUT')
@@ -52,7 +51,7 @@
                         <td class="text-center">
                             <button
                             class="btn btn-primary nv_save_info"
-                            onclick="submitEditForm()"
+                            onclick="submitEditForm({{$technology->id}})"
                             >
                                 <i class="fa-solid fa-floppy-disk"></i>
                             </button>
@@ -79,8 +78,8 @@
 </div>
 
 <script>
-    function submitEditForm(){
-        const form = document.getElementById('edit_form');
+    function submitEditForm(id){
+        const form = document.getElementById('edit_form' + id);
         form.submit();
     }
 </script>

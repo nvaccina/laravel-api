@@ -4,14 +4,14 @@
 
 <div class="container p-5">
 
+    <h1 class="text-secondary mb-4">Gestione Types</h1>
+
     @if (session('message'))
         <div class="alert alert-success" role="alert">
             {{ session('message') }}
         </div>
     @endif
 
-
-    <h1 class="text-secondary mb-4">Gestione Types</h1>
 
     <div class="w-50">
 

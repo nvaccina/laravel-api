@@ -17,7 +17,8 @@ class Work extends Model
         'image_original_name',
         'text',
         'creation_date',
-        'type_id'
+        'type_id',
+        'user_id'
     ];
 
 

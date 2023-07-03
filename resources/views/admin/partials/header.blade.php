@@ -36,12 +36,28 @@
                     </li>
                     @endif
                     @else
-                    <li class="nav-item">
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                            @csrf
-                            <button class="btn btn-sm btn-outline-light" type="submit">LOGOUT <i class=" ms-1 fa-solid fa-arrow-right-from-bracket"></i></button>
-                        </form>
-                    </li>
+                        <li class="nav-item">
+                            <form
+                                action="{{route('admin.works.index')}}"
+                                class="d-flex works_searchbar me-5"
+                                method="GET"
+                            >
+                                <input type="text" name="search" placeholder="Cerca Work">
+                                <button class="p-1"><i class="fa-solid fa-magnifying-glass ps-2"></i></button>
+                            </form>
+                        </li>
+
+                        <li class="nav-item text-white me-3 d-flex align-items-center">
+                            <i class="fa-regular fa-user pe-2"></i>
+                            <span class="text-uppercase">{{Auth::user()->name}}</span>
+                        </li>
+
+                        <li class="nav-item d-flex align-items-center">
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button class="btn btn-sm btn-outline-light" type="submit"><i class=" ms-1 fa-solid fa-arrow-right-from-bracket"></i></button>
+                            </form>
+                        </li>
                     @endguest
                 </ul>
             </div>

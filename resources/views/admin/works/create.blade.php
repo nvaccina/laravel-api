@@ -46,7 +46,10 @@
                     name="image"
                     onchange="showImage(event)"
                     >
-                <img id="default-image" width="150px" src="{{ asset('storage/' . $work->image) }}" alt="" onerror="this.src='/img/noimage.jpg'" class="pt-2">
+                <img id="default-image" width="150px" src="{{ asset('storage/' . $work?->image) }}" onerror="this.src='/img/noimage.jpg'" class="pt-2">
+                <div>
+                    <input type="radio" name="noImage" onchange="removeImage()"> <label for="">No image</label>
+                </div>
             </div>
 
             <div class="mb-3 w-25">
@@ -124,6 +127,13 @@
         function showImage(event){
             const tagImage = document.getElementById('default-image');
             tagImage.src = URL.createObjectURL(event.target.files[0]);
+        }
+
+        function removeImage(){
+            const imageInput = document.getElementById('image');
+            imageInput.value = '';
+            const tagImage = document.getElementById('prev-image');
+            tagImage.src = '';
         }
 
     </script>
