@@ -11,7 +11,7 @@
     @endif
 
 
-    <h1 class="text-secondary mb-4">Gestione Types</h1>
+    <h1 class="text-secondary mb-4">Gestione Technology</h1>
 
     <div class="w-50">
 

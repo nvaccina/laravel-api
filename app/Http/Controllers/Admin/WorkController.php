@@ -34,6 +34,13 @@ class WorkController extends Controller
         return view('admin.works.type-works', compact('types'));
     }
 
+    public function technologyWorks()
+    {
+        $technologies = Technology::all();
+
+        return view('admin.works.technology-works', compact('technologies'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

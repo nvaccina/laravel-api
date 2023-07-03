@@ -31,7 +31,7 @@
             </a>
         </li>
         <li class="py-2">
-            <a href="#" class="{{Route::currentRouteName() === '#' ? 'active' : ''}}">
+            <a href="{{route('admin.technology_works')}}" class="{{Route::currentRouteName() === 'admin.technology_works' ? 'active' : ''}}">
                 <i class="pe-2 fa-solid fa-folder-tree"></i> Elenco Technology/Work
             </a>
         </li>

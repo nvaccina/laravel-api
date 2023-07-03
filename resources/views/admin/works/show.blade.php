@@ -31,7 +31,7 @@
         <p class="pt-2">{!!$work->text!!}</p>
         <p>{{$date_formatted}}</p>
 
-        <a class="btn btn-warning" href="{{route('admin.works.edit', $work)}}">
+        <a class="btn btn-warning nv_edit" href="{{route('admin.works.edit', $work)}}">
             <i class="fa-solid fa-pen"></i>
         </a>
 
