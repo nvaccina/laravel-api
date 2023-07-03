@@ -27,6 +27,13 @@ class WorkController extends Controller
         return view('admin.works.index', compact('works'));
     }
 
+    public function typeWorks()
+    {
+        $types = Type::all();
+
+        return view('admin.works.type-works', compact('types'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

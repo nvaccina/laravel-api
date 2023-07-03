@@ -46,16 +46,19 @@
 
                         <td class="border border-0">{{date_format($date, 'd-m-Y')}}</td>
                         <td class="border border-0">
-                            <a class="btn btn-primary" href="{{route('admin.works.show', $work)}}">
+                            <a class="btn btn-primary nv_save_info" href="{{route('admin.works.show', $work)}}">
                                 <i class="fa-solid fa-info p-1"></i>
                             </a>
-                            <a class="btn btn-warning" href="{{route('admin.works.edit', $work)}}">
+                            <a class="btn btn-warning nv_edit" href="{{route('admin.works.edit', $work)}}">
                                 <i class="fa-solid fa-pen"></i>
                             </a>
 
-                            @include('admin.partials.form-delete')
-
-
+                            @include('admin.partials.form-delete',[
+                                'title' => 'Eliminazione Work',
+                                'id' => $work->id,
+                                'message' => "Confermi l'eliminazione del lavoro: $work->title ?",
+                                'route' => route('admin.works.destroy', $work)
+                            ])
                         </td>
                     </tr>
                 @endforeach

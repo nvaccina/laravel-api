@@ -7,13 +7,17 @@ header{
 
 aside{
     height: 100%;
-    width: 200px;
+    min-width: 270px;
     ul{
+        padding-right: 20px;
         li{
             list-style: none;
             a{
                 text-decoration: none;
                 color: white;
+                &:hover{
+                    color: brown;
+                }
             }
         }
     }
@@ -32,4 +36,39 @@ aside{
     min-width: 200px;
     min-height: 200px;
 }
-
+.active{
+    color: brown;
+}
+.nv_a_special{
+    text-decoration: none;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+.nv_trash:hover{
+    background-color: white;
+    & i {
+        color: red;
+    }
+}
+.nv_save_info:hover{
+    background-color: white;
+    & i {
+        color: #0D6EFD;
+    }
+}
+.nv_edit:hover{
+    background-color: white;
+    & i {
+        color: #FFC107;
+    }
+}
+.nv_search_type{
+    border: 1px solid grey;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.add_border{
+    border: 0;
+    border-left: 1px solid grey;
+}

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\WorkController;
+use App\Http\Controllers\Admin\TypeController;
 use App\Http\Controllers\Guest\PageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +35,9 @@ Route::middleware(['auth', 'verified'])
 
         Route::resource('works', WorkController::class);
 
+        Route::resource('types', TypeController::class);
+
+        Route::get('type-works', [WorkController::class, 'typeWorks'])->name('type_works');
     });
 
 require __DIR__.'/auth.php';
