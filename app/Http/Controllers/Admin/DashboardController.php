@@ -11,10 +11,13 @@ class DashboardController extends Controller
 {
     public function index(){
 
-        $n_works = Work::where('user_id', Auth::id())->count();
+        $n_works =      Work::where('user_id', Auth::id())->count();
+
+        $last_work =    Work::where('user_id', Auth::id())
+                            ->orderBy('id', 'desc')->first();
 
 
-        return view('admin.home', compact('n_works'));
+        return view('admin.home', compact('n_works', 'last_work'));
     }
 
     public function settings(){
