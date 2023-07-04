@@ -9,7 +9,7 @@
 
     @if ($last_work)
         <div class="pt-2">
-            <h4 class="py-3"><strong>Ultimo Lavoro Inserito: </strong>"{{ $last_work?->title }}"
+            <h4 class="py-3"><strong>Ultimo Lavoro inserito: </strong>"{{ $last_work?->title }}"
 
                 <a class="btn btn-primary nv_save_info ms-3" href="{{route('admin.works.show', $last_work)}}">
                     <i class="fa-solid fa-info p-1"></i>

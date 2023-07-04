@@ -16,7 +16,7 @@ class TechnologiesTableSeeder extends Seeder
      */
     public function run()
     {
-        $data = ['Front End', 'Back End', 'Design', 'UX', 'Laravel', 'VueJs'];
+        $data = ['HTML', 'CSS', 'SCSS', 'JavaScript', 'Java', 'Vue', 'Python', 'PHP', 'C++', 'TypeScript'];
 
         foreach($data as $technology){
             $new_technology = new Technology();
